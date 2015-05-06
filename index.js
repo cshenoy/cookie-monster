@@ -39,6 +39,10 @@ exports = module.exports = function (doc) {
 
     return newCookie;
   };
+  
+  self.del = function () {
+    return self.set(key, '', { expires: Date(0) });
+  };
   return self;
 };
 
@@ -46,4 +50,5 @@ if (typeof document !== 'undefined') {
   var cookie = exports(document);
   exports.get = cookie.get;
   exports.set = cookie.set;
+  exports.del = cookie.del;
 }
