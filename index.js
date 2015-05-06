@@ -40,7 +40,7 @@ exports = module.exports = function (doc) {
     return newCookie;
   };
   
-  self.del = function () {
+  self.del = function (key) {
     return self.set(key, '', { expires: Date(0) });
   };
   return self;
